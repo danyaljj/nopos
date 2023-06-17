@@ -12,7 +12,7 @@ from fairseq.criterions import FairseqCriterion, register_criterion
 from fairseq.dataclass import FairseqDataclass
 from omegaconf import II
 import torch as t
-from npe_utils import NPE_Utils
+from fairseq.npe_utils import NPE_Utils
 
 @dataclass
 class PPCrossEntropyCriterionConfig(FairseqDataclass):

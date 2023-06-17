@@ -7,7 +7,7 @@ import sys
 
 import torch
 from fairseq import utils
-from npe_utils import NPE_Utils
+from fairseq.npe_utils import NPE_Utils
 
 class SequenceScorerDecoderPositionProbe(object):
     """Scores the target for a given source sentence."""

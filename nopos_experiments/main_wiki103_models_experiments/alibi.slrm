@@ -1,0 +1,27 @@
+#!/bin/sh
+#SBATCH -A danielk80_gpu
+#SBATCH --partition ica100
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --gres=gpu:4
+#SBATCH --time=12:00:00
+#SBATCH --qos=qos_gpu
+#SBATCH --job-name=alibi
+#SBATCH --output=/scratch4/danielk/danielk/nopos/nopos_experiments/main_wiki103_models_experiments/checkpoints/alibi/out
+#SBATCH --error=/scratch4/danielk/danielk/nopos/nopos_experiments/main_wiki103_models_experiments/checkpoints/alibi/err
+#SBATCH --signal=USR1
+#SBATCH --mem=250000
+#SBATCH --cpus-per-task=6
+
+module load anaconda
+
+### init virtual environment if needed
+# conda create -n nopos_env python=3.8
+
+
+### see the other environments
+# conda info --envs
+
+conda activate nopos_env
+
+srun sh alibi.sh
